@@ -1,0 +1,37 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<BorderPane fx:controller="sample.Controller" xmlns:fx="http://javafx.com/fxml" style="-fx-background-color: #ccffff; -fx-text-fill: #3366cc;">
+    <top>
+        <VBox alignment="CENTER" fx:id="borderPaneTop">
+            <Label text="Welcome to my weather app!" style="-fx-font-size: 22px; -fx-text-fill: #3366cc;"/>
+            <Label fx:id="errorLabel" style="-fx-text-fill: white; -fx-border-width: 2px; -fx-border-style: solid; -fx-border-color: #ff4d4d;
+                -fx-alignment: center; -fx-background-color: #b30000; -fx-font-size: 20px;" />
+        </VBox>
+    </top>
+    <center>
+        <VBox alignment="TOP_CENTER">
+            <Label text="Enter a zip code or a city and country." />
+            <HBox alignment="CENTER">
+                <TextField prefWidth="250" fx:id="zipTextInput" onKeyReleased="#onZipTextInput" />
+                <Button text="Submit" onAction="#getRequest" fx:id="submitButton"/>
+            </HBox>
+            <VBox alignment="TOP_CENTER">
+                <Label fx:id="cityLabel" style="-fx-text-fill: #3366cc; -fx-font-size: 18px;"/>
+                <Label fx:id="tempLabel" style="-fx-text-fill: #3366cc; -fx-font-size: 18px;"/>
+                <Label fx:id="humidityLabel" style="-fx-text-fill: #3366cc; -fx-font-size: 18px;"/>
+                <ImageView fx:id="iconImageView">
+                </ImageView>
+                <Label fx:id="descLabel" style="-fx-text-fill: #3366cc; -fx-font-size: 18px;"/>
+            </VBox>
+        </VBox>
+    </center>
+</BorderPane>
